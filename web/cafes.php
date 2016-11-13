@@ -1,8 +1,13 @@
 <?php
 
+    $username="b7e635b1e1971d";
+    $password="589690c1";
+    $database="heroku_353b05db18aecbf";
+    $host="us-cdbr-iron-east-04.cleardb.net";
+
     function cafes_index()
     {
-        $pdo = new PDO("mysql:host=localhost;dbname=pendingCoffee", 'root', 'mysql');
+        $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
         
         $stmt = $pdo->query("SELECT * from theCafes;");
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
