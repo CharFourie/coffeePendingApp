@@ -7,6 +7,8 @@
 
     function cafes_index()
     {
+        global $username, $password, $database, $host;
+        
         $pdo = new PDO("mysql:host=$host;dbname=$database", $username, $password);
         
         $stmt = $pdo->query("SELECT * from theCafes;");
